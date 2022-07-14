@@ -12,13 +12,7 @@
             }
         }
 
-        static int Factorial(int N)
-        {
-            if (N <= 0) return 0;
-            int[] natural = new int[N];
-            for(int i = 1; i <= N; i++) natural[i - 1] = i;
-            return natural.Aggregate((x, y) => x * y);
-        }
+        static int Factorial(int N) => Enumerable.Range(1, N).Aggregate((x, y) => x * y);
 
         static int Fibbonacci(int N)
         {
